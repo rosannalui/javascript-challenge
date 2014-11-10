@@ -3,8 +3,6 @@
 //    Signup Form Script
 //    This script will load the state select list and validate the form before submission
 
-
-
 function onReady() {
 	//selecting the state drop down from the html 
 	var statesSelect = document.getElementsByName("state");
@@ -24,7 +22,6 @@ function onReady() {
 		otherVariable.addEventListener("change", selectOther);
 
 		signup.addEventListener('submit', onSubmit);
-
 
 		var noThanks = document.getElementById("cancelButton"); 
 		noThanks.addEventListener("click", clickingButton);  
@@ -92,7 +89,8 @@ function validateRequiredField(field, form) {
 		return false; 
 	} else if (field =="birthdate") {
 		var newAge = getAge(formName[field].value);
-		if (newAge<13) {
+		console.log(newAge); 
+		if (newAge < 13) {
 			document.getElementById("birthdateMessage").innerHTML= "13 years old too young do not want";
 			formName[field].className = 'invalid-field form-control';
 			return false; 
